@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.trabalho.crud.core.entity.Quarto;
 import org.springframework.stereotype.Service;
-
 import com.trabalho.crud.core.entity.BusinessException;
 import com.trabalho.crud.core.repository.QuartoRepository;
 
@@ -12,7 +11,6 @@ import com.trabalho.crud.core.repository.QuartoRepository;
 public class QuartoService {
 
 	private final QuartoRepository repository;
-
 
 	public QuartoService(QuartoRepository quartoRepository){
 		this.repository = quartoRepository;
@@ -23,8 +21,7 @@ public class QuartoService {
 	}
 
 	public Quarto findById(Long id) {
-		return repository.findById(id)
-			.orElseThrow(() -> BusinessException.notFoundException("Usuário não encontrado"));
+		return repository.findById(id).orElseThrow(() -> BusinessException.notFoundException("Quarto não encontrado"));
 	}
 
 	public Quarto save(Quarto Quarto) {
