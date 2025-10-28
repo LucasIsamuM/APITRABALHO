@@ -117,21 +117,21 @@ Abaixo está a descrição dos principais endpoints da API:
 - **Parâmetros de Caminho:**
   - **id:** ID do quarto
 - **Corpo da Requisição:**
-```json
-    {
-        "numero": 101,
-        "disponivel": false
-    }
-```
+   ```json
+       {
+           "numero": 101,
+           "disponivel": false
+       }
+   ```
 - **Resposta:**
   - 200 OK
-```json
-    {
-        "id": 1,
-        "numero": 101,
-        "disponivel": false
-    }
-```
+   ```json
+       {
+           "id": 1,
+           "numero": 101,
+           "disponivel": false
+       }
+   ```
 
 ### **5. DELETE /Quarto/{id}/deletar/**
 
@@ -150,13 +150,13 @@ Abaixo está a descrição dos principais endpoints da API:
 
 - **Resposta:**
   - 200 OK
-```json
-"O quarto está disponível"
-```
+   ```json
+   "O quarto está disponível"
+   ```
 ou
-```json
-"O quarto está ocupado"
-```
+   ```json
+   "O quarto está ocupado"
+   ```
 
 ### **7. PUT /Quarto/{id}/disponibilidade/{status}**
 - **Descrição:** Atualiza a disponibilidade de um quarto.
@@ -166,11 +166,11 @@ ou
 
 - **Resposta:**
   - 200 OK
-```json
-    {
-        "id": 1,
-        "numero": 101,
-        "disponivel": true
-    }
-```
+   ```json
+       {
+           "id": 1,
+           "numero": 101,
+           "disponivel": true
+       }
+   ```
 
