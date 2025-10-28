@@ -13,8 +13,17 @@ public class Quarto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private int numeroQuarto;
 	private boolean disponivel;
+
+	public Quarto() {}
+
+	public Quarto(Long id, int numeroQuarto, boolean disponivel) {
+		this.id = id;
+		this.numeroQuarto = numeroQuarto;
+		this.disponivel = disponivel;
+	}
 
 	public Long getId() {
 		return id;
@@ -40,5 +49,3 @@ public class Quarto {
 		this.disponivel = disponivel;
 	}
 }
-
-

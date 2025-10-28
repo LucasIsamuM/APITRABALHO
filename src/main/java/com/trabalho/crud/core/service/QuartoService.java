@@ -45,6 +45,9 @@ public class QuartoService {
 	}
 
 	public Quarto atualizarDisponibilidade(Long id, boolean status) {
-		return null;
+		Quarto quarto = this.findById(id);
+		quarto.setDisponivel(status);
+		return repository.save(quarto);
 	}
 }
+

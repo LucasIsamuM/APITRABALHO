@@ -40,12 +40,12 @@ public class QuartoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(quartoService.save(Quarto));
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/{id}/atualizar/")
 	public ResponseEntity<Quarto> updateUser(@PathVariable Long id, @RequestBody Quarto Quarto) {
 		return ResponseEntity.ok(quartoService.update(id, Quarto));
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{id}/deletar/")
 	public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
 		quartoService.deleteById(id);
 		return ResponseEntity.noContent().build();
