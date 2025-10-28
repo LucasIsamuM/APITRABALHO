@@ -13,7 +13,6 @@ public class Quarto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private int numeroQuarto;
 	private boolean disponivel;
 
