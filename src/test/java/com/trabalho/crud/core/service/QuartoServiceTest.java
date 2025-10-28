@@ -113,4 +113,17 @@ class QuartoServiceTest {
 
         assertTrue(disponivel);
     }
+
+    @Test
+    void deveAtualizarDisponibilidade() {
+        Quarto quartoExistente = new Quarto(1L, 101, true);
+        when(quartoRepository.findById(1L)).thenReturn(Optional.of(quartoExistente));
+        when(quartoRepository.save(any(Quarto.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        Quarto resultado = quartoService.atualizarDisponibilidade(1L, false);
+
+        assertFalse(resultado.isDisponivel());
+        verify(quartoRepository, times(1)).findById(1L);
+        verify(quartoRepository, times(1)).save(quartoExistente);
+    }
 }
