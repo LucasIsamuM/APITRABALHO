@@ -39,4 +39,12 @@ public class QuartoService {
 		repository.deleteById(id);
 	}
 
+	public boolean isDisponivel(Long id) {
+		Quarto quarto = this.findById(id);
+		return quarto.isDisponivel();
+	}
+
+	public Quarto atualizarDisponibilidade(Long id, boolean status) {
+		return null;
+	}
 }

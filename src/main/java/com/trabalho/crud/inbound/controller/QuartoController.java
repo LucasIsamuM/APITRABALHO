@@ -50,5 +50,16 @@ public class QuartoController {
 		quartoService.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+	@GetMapping("/{id}/disponibilidade")
+	public ResponseEntity<String> verificarDisponibilidade(@PathVariable Long id) {
+		boolean disponivel = quartoService.isDisponivel(id);
+		String status = disponivel ? "O quarto está disponível " : "O quarto está ocupado ";
+		return ResponseEntity.ok(status);
+	}
+	@PutMapping("/{id}/disponibilidade/{status}")
+	public ResponseEntity<Quarto> atualizarDisponibilidade(@PathVariable Long id, @PathVariable boolean status) {
+		Quarto quartoAtualizado = quartoService.atualizarDisponibilidade(id, status);
+		return ResponseEntity.ok(quartoAtualizado);
+	}
 
 }
